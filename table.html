@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table View</title>
+	<link rel="stylesheet" href="table.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+		integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+	<div class="table">
+		<div class="row table-header">
+			<div class="col col1 col-th">
+				Column 1
+			</div>
+			<div class="col col2 col-th">
+				Column 2</div>
+			<div class="col col3 col-th">
+				Input Column
+			</div>
+		</div>
+
+		<div class="search-panel">
+			<div class="search-input">
+				<i class="fa-solid fa-magnifying-glass"></i>
+				<input type="text" oninput="searchHandler(event)" placeholder='Search...'>
+			</div>
+		</div>
+
+		<!-- Rows -->
+		<div class="container"></div>
+
+		<!-- Bottom table section -->
+		<div class="save-btn">
+			<button type='button' onclick="saveButtonHandler()">
+				<i class="fa-regular fa-floppy-disk"></i>
+				<span>Save Changes</span>
+			</button>
+
+			<!-- Pagination -->
+			<nav class="pagination-container">
+				<button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+					&lt;
+				</button>
+				<div id="pagination-numbers" class="pagination-numbers"></div>
+				<button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+					&gt;
+				</button>
+			</nav>
+		</div>
+	</div>
+
+	<!-- Popup success and failed messages -->
+	<div class="success popup">
+		<div class="message-container">
+			<i class="fa-solid fa-check"></i>
+			<h2>Success</h2>
+			<span>Your data was saved!</span>
+		</div>
+	</div>
+
+	<div class="failed popup">
+		<div class="message-container">
+			<i class="fa-solid fa-xmark"></i>
+			<h2>Failed</h2>
+			<span>Something went wrong!</span>
+		</div>
+	</div>
+
+	<script src='table.js'></script>
+</body>
+
+</html>
